@@ -41,6 +41,14 @@
   background-color: #306be2;
 }
 
+.singleGame {
+  display: flex;
+}
+
+.game {
+  margin: 5px;
+}
+
 .Main-body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
