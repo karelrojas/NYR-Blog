@@ -1,0 +1,133 @@
+.App {
+  
+}
+
+.Header {
+  min-height: 75px;
+  background-color: #648de0;
+  display: flex;
+  justify-content: left;
+}
+
+.Title {
+  display: flex;
+  align-items: center;
+  margin: 25px;
+  font-size: x-large;
+}
+
+.Page-links {
+  display: flex;
+  align-items: center;
+}
+
+.Link {
+  margin: 15px;
+  font-size: large;
+}
+
+.Upcoming {
+  min-height: 325px;
+  background-color: #ec827c;
+}
+
+.Current-record {
+  min-height: 260px;
+  background-color: #6addd1;
+  position: relative;
+}
+
+.Record {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+
+.Upcoming-games {
+  min-height: 65px;
+  background-color: #d4e1fa;
+}
+
+.Game-Container {
+  display: flex;
+}
+
+.Game-Info {
+  border-right: solid rgb(204, 203, 203) 2px;
+}
+
+.Single-Game {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.Score-Container {
+  display: flex;
+}
+
+.Abbrev-Container {
+  display: flex;
+  align-items: center;
+}
+
+.Game {
+  margin: 5px;
+}
+
+.Logos {
+  width: 50px;
+}
+
+.Main-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  min-height: 1000px;
+  background-color: antiquewhite;
+}
+
+.Statistics {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Player-highlight {
+  min-height: 300px;
+  background-color: #feddb2;
+}
+
+.Quick-stats {
+  min-height: 250px;
+  background-color: #fcd198;
+}
+
+.Blog-preview {
+
+}
+
+.External {
+  margin: 50px;
+}
+
+.Articles {
+  min-height: 250px;
+  background-color: #fcd198;
+}
+
+.E-links {
+  min-height: 300px;
+  background-color: #feddb2;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
