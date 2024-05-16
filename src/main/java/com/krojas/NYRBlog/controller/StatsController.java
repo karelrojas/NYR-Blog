@@ -1,12 +1,11 @@
 package com.krojas.NYRBlog.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.krojas.NYRBlog.GamesList;
+import com.krojas.NYRBlog.info.GamesList;
+import com.krojas.NYRBlog.info.PostSeasonStats;
 
 @RestController
 public class StatsController {
@@ -20,5 +19,16 @@ public class StatsController {
 		
 		System.out.println(games);
 		return games;
+	}
+	
+	@GetMapping(value = "/postseason")
+	public PostSeasonStats getPostSeasonRecord() {
+		String uri = "https://api-web.nhle.com/v1/club-stats/NYR/20232024/3";
+		RestTemplate resTemp = new RestTemplate();
+		
+		PostSeasonStats stats = resTemp.getForObject(uri, PostSeasonStats.class);
+		
+		System.out.println(stats);
+		return stats;
 	}
 }

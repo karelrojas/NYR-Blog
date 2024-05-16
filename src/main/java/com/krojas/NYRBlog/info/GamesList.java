@@ -1,4 +1,4 @@
-package com.krojas.NYRBlog;
+package com.krojas.NYRBlog.info;
 
 import java.util.List;
 

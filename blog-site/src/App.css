@@ -34,19 +34,49 @@
 .Current-record {
   min-height: 260px;
   background-color: #6addd1;
+  position: relative;
+}
+
+.Record {
+  position: absolute;
+  top: 30%;
+  left: 45%;
 }
 
 .Upcoming-games {
   min-height: 65px;
-  background-color: #306be2;
+  background-color: #d4e1fa;
 }
 
-.singleGame {
+.Game-Container {
   display: flex;
 }
 
-.game {
+.Game-Info {
+  border-right: solid rgb(204, 203, 203) 2px;
+}
+
+.Single-Game {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.Score-Container {
+  display: flex;
+}
+
+.Abbrev-Container {
+  display: flex;
+  align-items: center;
+}
+
+.Game {
   margin: 5px;
+}
+
+.Logos {
+  width: 50px;
 }
 
 .Main-body {
