@@ -2,7 +2,7 @@ package com.krojas.NYRBlog.info;
 
 import java.util.List;
 
-public class PostSeasonStats {
+public class SeasonStats {
 
 	private List<Goalies> goalies;
 

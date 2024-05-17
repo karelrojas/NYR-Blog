@@ -5,6 +5,7 @@ import './App.css';
 
 function App() {
   const [gamesList, setGamesList] = useState([]);
+  const [seasonRec, setSeasonRec] = useState([,,]);
   const [postSeasonRec, setPostSeasonRec] = useState([]);
 
   async function getGames(){
@@ -13,11 +14,19 @@ function App() {
     setGamesList(res.data.gamesByDate);
   }
 
+  async function getSeasonRec(){
+    const res = await axios.get('http://localhost:8082/season');
+    console.log(res.data);
+    setSeasonRec(res.data);
+
+  }
+
   async function getPostSeasonRec(){
     const res = await axios.get('http://localhost:8082/postseason');
     console.log(res.data.goalies);
     setPostSeasonRec(res.data.goalies);
   }
+  
 
   return (
     <div className="App">
@@ -31,7 +40,8 @@ function App() {
           <div className="Link 3">News</div>
         </div>
         <button onClick={getGames}>Get Games</button>
-        <button onClick={getPostSeasonRec}>Get Record</button>
+        <button onClick={getSeasonRec}>Get Record</button>
+        <button onClick={getPostSeasonRec}>Get Post Record</button>
       </div>
       <div className="Upcoming">
         <div className="Current-record">
@@ -68,7 +78,8 @@ function App() {
             Placeholder Player
           </div>
           <div className="Quick-stats">
-            Placeholder Stats
+            Regular Season Record
+            <div className="Regular-Season">{seasonRec[0]} - {seasonRec[1]} - {seasonRec[2]}</div>
 
           </div>
         </div>
