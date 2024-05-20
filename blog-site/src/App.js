@@ -91,7 +91,26 @@ function App() {
             Placeholder Articles
           </div>
           <div className="E-links">
-            Placeholder E-links
+            <div className="NYR-links">
+              New York Rangers
+              <a href="https://x.com/NYRangers" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+              <a href="https://www.instagram.com/nyrangers/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <div className="Updates-links">
+              Team/Game Updates
+              <a href="https://x.com/vzmercogliano" target="_blank" rel="noopener noreferrer">Vince Mercogliano</a>
+              <a href="https://x.com/drosennhl" target="_blank" rel="noopener noreferrer">Dan Rosen</a>
+              <a href="https://x.com/VallysView" target="_blank" rel="noopener noreferrer">Stephen Valiquette</a>
+            
+            </div>
+            <div className="Personalities-links">
+              <div />
+              Personalities
+              <a href="https://x.com/OhRyanMead" target="_blank" rel="noopener noreferrer">Ryan Mead</a>
+              <a href="https://x.com/BlueshirtsBreak" target="_blank" rel="noopener noreferrer">Greg Kaplan</a>
+              <a href="https://x.com/based_shesty" target="_blank" rel="noopener noreferrer">Andrew (Based Shesty)</a>
+              <a href="" target="_blank" rel="noopener noreferrer"></a>
+            </div>
           </div>
         </div>
       </div>
