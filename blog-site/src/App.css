@@ -99,6 +99,29 @@
   background-color: #ffefda;
 }
 
+.Player {
+  text-align: center;
+}
+
+.Player-Name {
+  margin: 5px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffe2bc;
+  border-radius: 15px;
+}
+
+
+
+.Player-image {
+  width: 200px;
+}
+
 .Quick-stats {
   min-height: 250px;
   background-color: #ffe2bc;
