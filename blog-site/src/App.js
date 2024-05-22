@@ -53,6 +53,7 @@ function App() {
       </div>
       <div className="Upcoming">
         <div className="Current-record">
+          <img className="Record-bg" src="https://image.newyork.com.au/wp-content/uploads/2014/09/New-York-Rangers-Game-at-Madison-Square-Garden.jpg.webp"/>
           {postSeasonRec.map((data) => (
             <h1 className="Record">{data.wins} - {data.losses} - {data.overtimeLosses}</h1>
           ))}
@@ -87,9 +88,9 @@ function App() {
               <div className="Player">
                 <h4>Player of the Day</h4>
                 <img src={skaters[0].headshot} className="Player-image" /> 
-                <h3 className="Player-Name">{skaters[0].firstName.default} {skaters[0].lastName.default}</h3>
-                <table className="Player-Stats">
-                  <tr>
+                <h3 className="Player-name">{skaters[0].firstName.default} {skaters[0].lastName.default}</h3>
+                <table className="Player-stats">
+                  <tr className="Stat-labels">
                     <th scope="col">GP</th>
                     <th scope="col">G</th>
                     <th scope="col">A</th>

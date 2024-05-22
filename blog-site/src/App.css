@@ -37,10 +37,19 @@
   position: relative;
 }
 
+.Record-bg {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 .Record {
+  background-color: rgb(100, 141, 224, 0.5);
+  padding: 10px;
   position: absolute;
   top: 30%;
   left: 45%;
+  
 }
 
 .Upcoming-games {
@@ -95,7 +104,7 @@
 }
 
 .Player-highlight {
-  min-height: 300px;
+  min-height: 365px;
   background-color: #ffefda;
 }
 
@@ -103,7 +112,7 @@
   text-align: center;
 }
 
-.Player-Name {
+.Player-name {
   margin: 5px;
 }
 
@@ -116,6 +125,10 @@ table {
   border-radius: 15px;
 }
 
+th[scope='col'] {
+  padding: 15px;
+  padding-bottom: 2px;
+}
 
 
 .Player-image {
@@ -164,14 +177,9 @@ table {
   flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+footer {
+  font-size: 12px;
+  text-align: center;
+  background-color: #ffefda;
 }
 
