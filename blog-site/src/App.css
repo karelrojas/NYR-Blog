@@ -116,6 +116,8 @@
 .Articles {
   min-height: 250px;
   background-color: #ffe2bc;
+  display: flex;
+  flex-direction: column;
 }
 
 .E-links {

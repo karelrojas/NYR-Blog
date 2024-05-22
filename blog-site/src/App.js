@@ -88,7 +88,10 @@ function App() {
         </div>
         <div className="External">
           <div className="Articles">
-            Placeholder Articles
+            News Articles
+          <a href="https://www.nhl.com/rangers/" target="_blank" rel="noopener noreferrer">NHL Website</a>
+          <a href="https://nypost.com/new-york-rangers/" target="_blank" rel="noopener noreferrer">New York Post</a>
+          <a href="https://www.blueshirtbanter.com/" target="_blank" rel="noopener noreferrer">Blueshirt Banter</a>
           </div>
           <div className="E-links">
             <div className="NYR-links">
