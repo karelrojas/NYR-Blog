@@ -50,10 +50,14 @@
 
 .Game-Container {
   display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  scrollbar-color: #eaf1fe #c8d9fa;
+  scrollbar-width: thin;
 }
 
 .Game-Info {
-  border-right: solid rgb(204, 203, 203) 2px;
+  border-right: solid #cccbcb 2px;
 }
 
 .Single-Game {
@@ -83,26 +87,26 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   min-height: 1000px;
-  background-color: antiquewhite;
+  background-color: #fff8f0;
 }
 
 .Statistics {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 50px;
 }
 
 .Player-highlight {
   min-height: 300px;
-  background-color: #feddb2;
+  background-color: #ffefda;
 }
 
 .Quick-stats {
   min-height: 250px;
-  background-color: #fcd198;
+  background-color: #ffe2bc;
 }
 
 .Blog-preview {
-
+  margin: 50px;
+  background-color: #ffefda;
 }
 
 .External {
@@ -111,14 +115,31 @@
 
 .Articles {
   min-height: 250px;
-  background-color: #fcd198;
+  background-color: #ffe2bc;
+  display: flex;
+  flex-direction: column;
 }
 
 .E-links {
   min-height: 300px;
-  background-color: #feddb2;
+  background-color: #ffefda;
+  
 }
 
+.NYR-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.Updates-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.Personalities-links {
+  display: flex;
+  flex-direction: column;
+}
 
 .App-header {
   background-color: #282c34;
