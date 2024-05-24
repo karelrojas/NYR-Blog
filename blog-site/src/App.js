@@ -7,10 +7,10 @@ function App() {
   const [gamesList, setGamesList] = useState([]);
   const [seasonRec, setSeasonRec] = useState([,,]);
   const [postSeasonRec, setPostSeasonRec] = useState([]);
-  const [skaters, setSkaters] = useState([]);
+  const [skaters, setSkaters] = useState();
 
 // useEffect(() => {
-//   getGames();
+//   getPostSeasonRec();
 // }, []);
 
   async function getGames(){
@@ -28,13 +28,15 @@ function App() {
 
   async function getPostSeasonRec(){
     const res = await axios.get('http://localhost:8082/postseason');
-    console.log(res.data.skaters);
+    console.log(res.data.skaters[randNum(res.data.skaters.length)]);
     console.log(res.data.goalies);
-    setSkaters(res.data.skaters);
+    setSkaters(res.data.skaters[randNum(res.data.skaters.length)]);
     setPostSeasonRec(res.data.goalies);
   }
 
-  
+  function randNum(limit) {
+    return Math.floor(Math.random() * limit);
+  }
 
   return (
     <div className="App">
@@ -84,11 +86,11 @@ function App() {
       <div className="Main-body">
         <div className="Statistics">
           <div className="Player-highlight">
-            { skaters.length > 0 ? 
+            { skaters != null && (
               <div className="Player">
                 <h4>Player of the Day</h4>
-                <img src={skaters[0].headshot} className="Player-image" /> 
-                <h3 className="Player-name">{skaters[0].firstName.default} {skaters[0].lastName.default}</h3>
+                <img src={skaters.headshot} className="Player-image" /> 
+                <h3 className="Player-name">{skaters.firstName.default} {skaters.lastName.default}</h3>
                 <table className="Player-stats">
                   <tr className="Stat-labels">
                     <th scope="col">GP</th>
@@ -98,15 +100,15 @@ function App() {
                     <th scope="col">+/-</th>
                   </tr>
                   <tr>
-                    <td>{skaters[0].gamesPlayed}</td>
-                    <td>{skaters[0].goals}</td>
-                    <td>{skaters[0].assists}</td>
-                    <td>{skaters[0].points}</td>
-                    <td>{skaters[0].plusMinus}</td>
+                    <td>{skaters.gamesPlayed}</td>
+                    <td>{skaters.goals}</td>
+                    <td>{skaters.assists}</td>
+                    <td>{skaters.points}</td>
+                    <td>{skaters.plusMinus}</td>
                   </tr>
                 </table>
               </div>
-            : null}
+            )}
           </div>
           <div className="Quick-stats">
             Regular Season Record
