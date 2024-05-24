@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import './App.css';
@@ -7,6 +7,11 @@ function App() {
   const [gamesList, setGamesList] = useState([]);
   const [seasonRec, setSeasonRec] = useState([,,]);
   const [postSeasonRec, setPostSeasonRec] = useState([]);
+  const [skaters, setSkaters] = useState();
+
+// useEffect(() => {
+//   getPostSeasonRec();
+// }, []);
 
   async function getGames(){
     const res = await axios.get('http://localhost:8082/games');
@@ -23,10 +28,15 @@ function App() {
 
   async function getPostSeasonRec(){
     const res = await axios.get('http://localhost:8082/postseason');
+    console.log(res.data.skaters[randNum(res.data.skaters.length)]);
     console.log(res.data.goalies);
+    setSkaters(res.data.skaters[randNum(res.data.skaters.length)]);
     setPostSeasonRec(res.data.goalies);
   }
-  
+
+  function randNum(limit) {
+    return Math.floor(Math.random() * limit);
+  }
 
   return (
     <div className="App">
@@ -41,10 +51,11 @@ function App() {
         </div>
         <button onClick={getGames}>Get Games</button>
         <button onClick={getSeasonRec}>Get Record</button>
-        <button onClick={getPostSeasonRec}>Get Post Record</button>
+        <button onClick={getPostSeasonRec}>Get Postseason Record</button>
       </div>
       <div className="Upcoming">
         <div className="Current-record">
+          <img className="Record-bg" src="https://image.newyork.com.au/wp-content/uploads/2014/09/New-York-Rangers-Game-at-Madison-Square-Garden.jpg.webp"/>
           {postSeasonRec.map((data) => (
             <h1 className="Record">{data.wins} - {data.losses} - {data.overtimeLosses}</h1>
           ))}
@@ -75,7 +86,29 @@ function App() {
       <div className="Main-body">
         <div className="Statistics">
           <div className="Player-highlight">
-            Placeholder Player
+            { skaters != null && (
+              <div className="Player">
+                <h4>Player of the Day</h4>
+                <img src={skaters.headshot} className="Player-image" /> 
+                <h3 className="Player-name">{skaters.firstName.default} {skaters.lastName.default}</h3>
+                <table className="Player-stats">
+                  <tr className="Stat-labels">
+                    <th scope="col">GP</th>
+                    <th scope="col">G</th>
+                    <th scope="col">A</th>
+                    <th scope="col">P</th>
+                    <th scope="col">+/-</th>
+                  </tr>
+                  <tr>
+                    <td>{skaters.gamesPlayed}</td>
+                    <td>{skaters.goals}</td>
+                    <td>{skaters.assists}</td>
+                    <td>{skaters.points}</td>
+                    <td>{skaters.plusMinus}</td>
+                  </tr>
+                </table>
+              </div>
+            )}
           </div>
           <div className="Quick-stats">
             Regular Season Record
