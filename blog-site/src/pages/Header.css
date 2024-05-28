@@ -1,0 +1,13 @@
+
+.Header {
+    background-color: #648de0;
+    display: flex;
+    justify-content: left;
+}
+
+.Title-page {
+    margin: 5px;
+    font-size: xx-large;
+    text-decoration: none;
+    color: black;
+}

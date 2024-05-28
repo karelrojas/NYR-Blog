@@ -1,0 +1,39 @@
+.Blog-page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    min-height: 1000px;
+    background-color: #fff8f0;
+}
+
+.Blogs {
+    background-color: #ffefda;
+}
+
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Recent-blogs {
+    min-height: 400px;
+    background-color: #ffefda;
+}
+
+.Blog-small {
+    padding: 5px;
+}
+
+.Blog-small-title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.Blog-small-subtitle {
+    font-size: 15px;
+}
+
+.History {
+    min-height: 600px;
+    background-color: #ffe2bc;
+}

@@ -2,17 +2,10 @@
   
 }
 
-.Header {
-  min-height: 75px;
-  background-color: #648de0;
-  display: flex;
-  justify-content: left;
-}
-
 .Title {
   display: flex;
   align-items: center;
-  margin: 25px;
+  margin: 15px;
   font-size: x-large;
 }
 
@@ -28,7 +21,6 @@
 
 .Upcoming {
   min-height: 325px;
-  background-color: #ec827c;
 }
 
 .Current-record {
@@ -39,12 +31,13 @@
 
 .Record-bg {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
 }
 
 .Record {
-  background-color: rgb(100, 141, 224, 0.5);
+  background-color: rgb(100, 141, 224, 0.75);
+  border-radius: 15px;
   padding: 10px;
   position: absolute;
   top: 30%;
@@ -141,8 +134,26 @@ th[scope='col'] {
 }
 
 .Blog-preview {
+  padding: 15px;
   margin: 50px;
   background-color: #ffefda;
+}
+
+.Blog-article {
+  padding: 15px;
+  background-color: #ffe2bc;
+  margin-bottom: 50px;
+}
+
+.Blog-title {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.Blog-info {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .External {
@@ -150,6 +161,7 @@ th[scope='col'] {
 }
 
 .Articles {
+  padding: 15px;
   min-height: 250px;
   background-color: #ffe2bc;
   display: flex;
@@ -157,6 +169,7 @@ th[scope='col'] {
 }
 
 .E-links {
+  padding: 15px;
   min-height: 300px;
   background-color: #ffefda;
   

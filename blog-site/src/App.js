@@ -8,6 +8,7 @@ function App() {
   const [seasonRec, setSeasonRec] = useState([,,]);
   const [postSeasonRec, setPostSeasonRec] = useState([]);
   const [skaters, setSkaters] = useState();
+  const [recentBlogs, setRecentBlogs] = useState([]);
 
 // useEffect(() => {
 //   getPostSeasonRec();
@@ -34,28 +35,21 @@ function App() {
     setPostSeasonRec(res.data.goalies);
   }
 
+  async function getRecentBlogs(){
+    const res = await axios.get('http://localhost:8082/recent-blogs');
+    console.log(res.data);
+    setRecentBlogs(res.data);
+  }
+
   function randNum(limit) {
     return Math.floor(Math.random() * limit);
   }
 
   return (
     <div className="App">
-      <div className="Header">
-        <div className="Title">
-          Placeholder Title
-        </div>
-        <div className="Page-links">
-          <div className="Link 1">Blog</div>
-          <div className="Link 2">Statistics</div>
-          <div className="Link 3">News</div>
-        </div>
-        <button onClick={getGames}>Get Games</button>
-        <button onClick={getSeasonRec}>Get Record</button>
-        <button onClick={getPostSeasonRec}>Get Postseason Record</button>
-      </div>
       <div className="Upcoming">
         <div className="Current-record">
-          <img className="Record-bg" src="https://image.newyork.com.au/wp-content/uploads/2014/09/New-York-Rangers-Game-at-Madison-Square-Garden.jpg.webp"/>
+          <img className="Record-bg" src="/img/MSG_image.jpg"/>
           {postSeasonRec.map((data) => (
             <h1 className="Record">{data.wins} - {data.losses} - {data.overtimeLosses}</h1>
           ))}
@@ -113,11 +107,27 @@ function App() {
           <div className="Quick-stats">
             Regular Season Record
             <div className="Regular-Season">{seasonRec[0]} - {seasonRec[1]} - {seasonRec[2]}</div>
-
+            <button onClick={getGames}>Get Games</button>
+            <button onClick={getSeasonRec}>Get Record</button>
+            <button onClick={getPostSeasonRec}>Get Postseason Record</button>
+            <button onClick={getRecentBlogs}>Get Recent Blogs</button>
           </div>
         </div>
         <div className="Blog-preview">
-          Placeholder Blog Section
+          {recentBlogs.map((data, index) => (
+            <div className="Blog-article" key={index}>
+              <div className="Blog-header">
+                <div className="Blog-title">{data.title}</div>
+                <div className="Blog-subtitle">{data.subtitle}</div>
+              </div>
+              <div className="Blog-info">
+                <div className="Blog-author">By: {data.author}</div>
+                <div className="Blog-publishDate">{data.publishDate}</div>
+              </div>
+              <div className="Blog-body">{data.body}</div>
+            </div>
+          ))}
+          <a href="/blogs" className="More-blogs">More Blogs</a>
         </div>
         <div className="External">
           <div className="Articles">
