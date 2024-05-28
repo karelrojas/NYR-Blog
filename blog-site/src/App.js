@@ -8,6 +8,7 @@ function App() {
   const [seasonRec, setSeasonRec] = useState([,,]);
   const [postSeasonRec, setPostSeasonRec] = useState([]);
   const [skaters, setSkaters] = useState();
+  const [recentBlogs, setRecentBlogs] = useState([]);
 
 // useEffect(() => {
 //   getPostSeasonRec();
@@ -34,6 +35,12 @@ function App() {
     setPostSeasonRec(res.data.goalies);
   }
 
+  async function getRecentBlogs(){
+    const res = await axios.get('http://localhost:8082/recent-blogs');
+    console.log(res.data);
+    setRecentBlogs(res.data);
+  }
+
   function randNum(limit) {
     return Math.floor(Math.random() * limit);
   }
@@ -52,6 +59,7 @@ function App() {
         <button onClick={getGames}>Get Games</button>
         <button onClick={getSeasonRec}>Get Record</button>
         <button onClick={getPostSeasonRec}>Get Postseason Record</button>
+        <button onClick={getRecentBlogs}>Get Recent Blogs</button>
       </div>
       <div className="Upcoming">
         <div className="Current-record">
@@ -117,7 +125,19 @@ function App() {
           </div>
         </div>
         <div className="Blog-preview">
-          Placeholder Blog Section
+          {recentBlogs.map((data, index) => (
+            <div className="Blog-article" key={index}>
+              <div className="Blog-header">
+                <div className="Blog-title">{data.title}</div>
+                <div className="Blog-subtitle">{data.subtitle}</div>
+              </div>
+              <div className="Blog-info">
+                <div className="Blog-author">By: {data.author}</div>
+                <div className="Blog-publishDate">{data.publishDate}</div>
+              </div>
+              <div className="Blog-body">{data.body}</div>
+            </div>
+          ))}
         </div>
         <div className="External">
           <div className="Articles">

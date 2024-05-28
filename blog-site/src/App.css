@@ -141,8 +141,26 @@ th[scope='col'] {
 }
 
 .Blog-preview {
+  padding: 15px;
   margin: 50px;
   background-color: #ffefda;
+}
+
+.Blog-article {
+  padding: 15px;
+  background-color: #ffe2bc;
+  margin-bottom: 50px;
+}
+
+.Blog-title {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.Blog-info {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .External {
