@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Blogs from './pages/Blogs.js';
 import axios from 'axios';
 
 import './App.css';
@@ -49,12 +51,10 @@ function App() {
     <div className="App">
       <div className="Header">
         <div className="Title">
-          Placeholder Title
+          The Garden Plot
         </div>
         <div className="Page-links">
-          <div className="Link 1">Blog</div>
-          <div className="Link 2">Statistics</div>
-          <div className="Link 3">News</div>
+          <a href="#" className="Link 1">Blogs</a>
         </div>
         <button onClick={getGames}>Get Games</button>
         <button onClick={getSeasonRec}>Get Record</button>
@@ -138,6 +138,7 @@ function App() {
               <div className="Blog-body">{data.body}</div>
             </div>
           ))}
+          <a href="#" className="More-blogs">More Blogs</a>
         </div>
         <div className="External">
           <div className="Articles">
