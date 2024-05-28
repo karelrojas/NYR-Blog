@@ -63,7 +63,7 @@ function App() {
       </div>
       <div className="Upcoming">
         <div className="Current-record">
-          <img className="Record-bg" src="https://image.newyork.com.au/wp-content/uploads/2014/09/New-York-Rangers-Game-at-Madison-Square-Garden.jpg.webp"/>
+          <img className="Record-bg" src="/img/MSG_image.jpg"/>
           {postSeasonRec.map((data) => (
             <h1 className="Record">{data.wins} - {data.losses} - {data.overtimeLosses}</h1>
           ))}
