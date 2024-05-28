@@ -2,13 +2,6 @@
   
 }
 
-.Header {
-  min-height: 50px;
-  background-color: #648de0;
-  display: flex;
-  justify-content: left;
-}
-
 .Title {
   display: flex;
   align-items: center;

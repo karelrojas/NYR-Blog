@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Blogs from './pages/Blogs.js';
 import axios from 'axios';
 
 import './App.css';
@@ -49,18 +47,6 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Header">
-        <div className="Title">
-          The Garden Plot
-        </div>
-        <div className="Page-links">
-          <a href="#" className="Link 1">Blogs</a>
-        </div>
-        <button onClick={getGames}>Get Games</button>
-        <button onClick={getSeasonRec}>Get Record</button>
-        <button onClick={getPostSeasonRec}>Get Postseason Record</button>
-        <button onClick={getRecentBlogs}>Get Recent Blogs</button>
-      </div>
       <div className="Upcoming">
         <div className="Current-record">
           <img className="Record-bg" src="/img/MSG_image.jpg"/>
@@ -121,7 +107,10 @@ function App() {
           <div className="Quick-stats">
             Regular Season Record
             <div className="Regular-Season">{seasonRec[0]} - {seasonRec[1]} - {seasonRec[2]}</div>
-
+            <button onClick={getGames}>Get Games</button>
+            <button onClick={getSeasonRec}>Get Record</button>
+            <button onClick={getPostSeasonRec}>Get Postseason Record</button>
+            <button onClick={getRecentBlogs}>Get Recent Blogs</button>
           </div>
         </div>
         <div className="Blog-preview">
