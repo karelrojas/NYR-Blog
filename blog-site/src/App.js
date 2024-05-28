@@ -127,7 +127,7 @@ function App() {
               <div className="Blog-body">{data.body}</div>
             </div>
           ))}
-          <a href="#" className="More-blogs">More Blogs</a>
+          <a href="/blogs" className="More-blogs">More Blogs</a>
         </div>
         <div className="External">
           <div className="Articles">

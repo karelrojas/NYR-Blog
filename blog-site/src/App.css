@@ -21,7 +21,6 @@
 
 .Upcoming {
   min-height: 325px;
-  background-color: #ec827c;
 }
 
 .Current-record {
@@ -37,7 +36,8 @@
 }
 
 .Record {
-  background-color: rgb(100, 141, 224, 0.5);
+  background-color: rgb(100, 141, 224, 0.75);
+  border-radius: 15px;
   padding: 10px;
   position: absolute;
   top: 30%;
