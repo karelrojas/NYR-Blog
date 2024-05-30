@@ -32,10 +32,10 @@ export default function Blogs() {
                         <div className="Blog-subtitle">{data.subtitle}</div>
                     </div>
                     <div className="Blog-info">
-                        <div className="Blog-author">By: {data.author}</div>
-                        <div className="Blog-publishDate">{data.publishDate}</div>
+                        <div className="Blog-author">By {data.author}</div>
+                        <div className="Blog-publishDate">Published on {data.publishDate}</div>
                     </div>
-                    <div className="Blog-body">{data.body}</div>
+                    <p className="Blog-body">{data.body}</p>
                     </div>
                 ))}
             </div>

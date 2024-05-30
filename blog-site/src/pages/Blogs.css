@@ -2,22 +2,23 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     min-height: 1000px;
-    background-color: #fff8f0;
 }
 
 .Blogs {
-    background-color: #ffefda;
+    padding: 50px;
 }
 
 .Sidebar {
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    background-color: #fcf6ee;
 }
 
 
 .Recent-blogs {
     min-height: 400px;
-    background-color: #ffefda;
+    background-color: #fcf6ee;
 }
 
 .Blog-small {
@@ -35,5 +36,5 @@
 
 .History {
     min-height: 600px;
-    background-color: #ffe2bc;
+    background-color: #fcf6ee;
 }
