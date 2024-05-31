@@ -24,7 +24,6 @@ export default function Blogs() {
     return (
         <div className="Blog-page">
             <div className="Blogs">
-                
                 {blogs.map((data, index) => (
                     <div className="Blog-article" key={index}>
                     <div className="Blog-header">

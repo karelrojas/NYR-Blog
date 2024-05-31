@@ -1,6 +1,7 @@
 package com.krojas.NYRBlog.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,13 @@ public class BlogService {
 	public BlogService(BlogRepository blogRepo) {
 		this.blogRepo = blogRepo;
 	}
+	
+	public Blog getBlog(Integer blogId) {
+		Optional<Blog> currentBlog = blogRepo.findById(blogId);
+		
+		return currentBlog.get();
+	}
+	
 	
 	public List<Blog> getAllBlogs() {
 		return blogRepo.findAll();

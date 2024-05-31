@@ -138,6 +138,11 @@ th[scope='col'] {
   background-color: #fcf6ee;
 }
 
+.Blog-link {
+  text-decoration: none;
+  color: black;
+}
+
 .Blog-article {
   padding: 15px;
   margin-bottom: 10px;
