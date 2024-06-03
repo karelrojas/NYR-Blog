@@ -51,7 +51,7 @@ export default function BlogPage() {
                     ))}
                 </div>
                 <div className="History">
-                    <div>Blogs history with calendar go here</div>
+                    <div></div>
                 </div>
             </div>
         </div>

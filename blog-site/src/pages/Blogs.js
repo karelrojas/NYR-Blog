@@ -42,15 +42,17 @@ export default function Blogs() {
                 <div className="Recent-blogs">
                     {recentBlogs.map((data, index) => (
                         <div className="Blog-small" key={index}>
-                            <div className="Blog-header">
-                                <div className="Blog-small-title">{data.title}</div>
-                                <div className="Blog-small-subtitle">{data.subtitle}</div>
-                            </div>
+                            <a href={"/blogs/" + data.id} className="Blog-link">
+                                <div className="Blog-header">
+                                    <div className="Blog-small-title">{data.title}</div>
+                                    <div className="Blog-small-subtitle">{data.subtitle}</div>
+                                </div>
+                            </a>
                         </div>
                     ))}
                 </div>
                 <div className="History">
-                    <div>Blogs history with calendar go here</div>
+                    <div></div>
                 </div>
             </div>
         </div>

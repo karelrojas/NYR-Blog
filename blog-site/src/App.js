@@ -11,7 +11,11 @@ function App() {
   const [recentBlogs, setRecentBlogs] = useState([]);
 
 useEffect(() => {
+  getGames();
+  getSeasonRec();
+  getPostSeasonRec();
   getRecentBlogs();
+
 }, []);
 
   async function getGames(){
@@ -24,7 +28,6 @@ useEffect(() => {
     const res = await axios.get('http://localhost:8082/season');
     console.log(res.data);
     setSeasonRec(res.data);
-
   }
 
   async function getPostSeasonRec(){
@@ -107,10 +110,6 @@ useEffect(() => {
           <div className="Quick-stats">
             Regular Season Record
             <div className="Regular-Season">{seasonRec[0]} - {seasonRec[1]} - {seasonRec[2]}</div>
-            <button onClick={getGames}>Get Games</button>
-            <button onClick={getSeasonRec}>Get Record</button>
-            <button onClick={getPostSeasonRec}>Get Postseason Record</button>
-            <button onClick={getRecentBlogs}>Get Recent Blogs</button>
           </div>
         </div>
         <div className="Blog-preview">
