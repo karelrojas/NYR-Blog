@@ -31,6 +31,11 @@ public class BlogController {
 		return blogService.getAllBlogs();
 	}
 	
+	@GetMapping(value = "/blogs/{blogId}")
+	public Blog getBlog(@PathVariable Integer blogId) {
+		return blogService.getBlog(blogId);
+	}
+	
 	@PostMapping(value = "/blogs")
 	public void addNewBlog(@RequestBody Blog newBlog) {
 		blogService.addNewBlog(newBlog);

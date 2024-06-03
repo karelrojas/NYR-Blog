@@ -4,7 +4,8 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import Header from './pages/Header';
-import Blogs from './pages/Blogs'
+import Blogs from './pages/Blogs';
+import BlogPage from './pages/BlogPage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,8 +14,9 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<App header={<Header />}/>} />
-        <Route path="/blogs" element={<Blogs header={<Header />}/>} />
+        <Route path='/' element={<App />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
